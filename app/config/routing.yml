@@ -4,30 +4,30 @@
 
 product_create:
   path: /product/
-  defaults: { _controller: \MyApp\Bundle\ProductBundle\Product\Controller\CreateProductController::execute }
+  defaults: { _controller: \MyApp\Bundle\ProductBundle\Product\Controller\ProductController::newProduct }
   methods: [POST]
 
 product_delete:
   path: /product/{id}/
-  defaults: { _controller: \MyApp\Bundle\ProductBundle\Product\Controller\DeleteProductController::execute }
+  defaults: { _controller: \MyApp\Bundle\ProductBundle\Product\Controller\ProductController::deleteProduct }
   methods: [DELETE]
 
 product_update:
   path: /product/{id}/
-  defaults: { _controller: \MyApp\Bundle\ProductBundle\Product\Controller\UpdateProductController::execute }
+  defaults: { _controller: \MyApp\Bundle\ProductBundle\Product\Controller\ProductController::updateProduct }
   methods: [PUT]
 
 product_list:
   path: /product/
-  defaults: { _controller: \MyApp\Bundle\ProductBundle\Product\Controller\ListProductsController::execute }
+  defaults: { _controller: \MyApp\Bundle\ProductBundle\Product\Controller\ProductController::listProduct }
   methods: [GET]
 
 owner_create:
   path: /owner/
-  defaults: { _controller: \MyApp\Bundle\ProductBundle\Owner\Controller\CreateOwnerController::execute }
+  defaults: { _controller: \MyApp\Bundle\ProductBundle\Owner\Controller\OwnerController::newOwner }
   methods: [POST]
 
 owner_list:
   path: /owner/
-  defaults: { _controller: \MyApp\Bundle\ProductBundle\Owner\Controller\ListOwnersController::execute }
+  defaults: { _controller: \MyApp\Bundle\ProductBundle\Owner\Controller\OwnerController::listOwner }
   methods: [GET]

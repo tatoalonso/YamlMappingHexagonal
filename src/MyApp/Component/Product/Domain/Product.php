@@ -2,7 +2,7 @@
 
 namespace MyApp\Component\Product\Domain;
 
-use Doctrine\ORM\Mapping as ORM;
+
 
 
 class Product
@@ -31,57 +31,68 @@ class Product
     }
 
 
-    public function getId()
+    public function getId() :int
     {
         return $this->id;
     }
 
 
-    public function getName()
+    public function getName() :string
     {
         return $this->name;
     }
 
 
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->name = $name;
 
     }
 
 
-    public function getPrice()
+    public function getPrice() :int
     {
         return $this->price;
     }
 
 
-    public function setPrice($price)
+    public function setPrice(int $price)
     {
         $this->price = $price;
     }
 
 
-    public function getDescription()
+    public function getDescription() :string
     {
         return $this->description;
     }
 
 
-    public function setDescription($description)
+    public function setDescription(string $description)
     {
         $this->description = $description;
     }
 
 
-    public function getOwner()
+    public function getOwner(): Owner
     {
         return $this->owner;
     }
 
 
-    public function setOwner($owner)
+    public function setOwner(Owner $owner) : Owner
     {
         $this->owner = $owner;
+    }
+
+    public function productToArray() :array
+    {
+        return [
+            'id' => $this->getId(),
+            'name' => $this->getName(),
+            'price' => $this->getPrice(),
+            'description' => $this->getDescription(),
+            'ownerId' => $this->getOwner()->getId()
+        ];
     }
 }

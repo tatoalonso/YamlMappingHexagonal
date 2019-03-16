@@ -1,6 +1,7 @@
 
 MyApp\Component\Product\Domain\Owner:
   type: entity
+  #repositoryClass: MyApp\Bundle\ProductBundle\Owner\Repository\MySqlOwnerRepository
   table: owner
   id:
       id:
@@ -10,3 +11,4 @@ MyApp\Component\Product\Domain\Owner:
        name:
           type: string
           length: 100
+          unique: true

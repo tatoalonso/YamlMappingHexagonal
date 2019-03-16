@@ -2,7 +2,7 @@
 
 namespace MyApp\Component\Product\Domain;
 
-use Doctrine\ORM\Mapping as ORM;
+
 
 
 class Owner
@@ -21,21 +21,29 @@ class Owner
     }
 
 
-    public function getId()
+    public function getId() :int
     {
         return $this->id;
     }
 
 
-    public function getName()
+    public function getName():string
     {
         return $this->name;
     }
 
 
-    public function setName($name)
+    public function setName(string $name) :string
     {
         $this->name = $name;
+    }
+
+    public function ownerToArray():array
+    {
+        return [
+            'id' => $this->getId(),
+            'name' => $this->getName()
+        ];
     }
 
 }
